@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace CubaDevOps\Flexi\Modules\WebHooks\Infrastructure\Controllers;
+namespace Flexi\Modules\WebHooks\Infrastructure\Controllers;
 
 use Flexi\Contracts\Classes\HttpHandler;
 use Flexi\Contracts\Interfaces\EventBusInterface;
-use CubaDevOps\Flexi\Modules\WebHooks\Domain\Events\WebhookEvent;
+use Flexi\Modules\WebHooks\Domain\Events\WebhookEvent;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace CubaDevOps\Flexi\Modules\WebHooks\Tests\Infrastructure\Controllers;
+namespace Flexi\Modules\WebHooks\Tests\Infrastructure\Controllers;
 
-use CubaDevOps\Flexi\Modules\WebHooks\Domain\Events\WebhookEvent;
+use Flexi\Modules\WebHooks\Domain\Events\WebhookEvent;
 use Flexi\Contracts\Interfaces\EventBusInterface;
-use CubaDevOps\Flexi\Modules\Auth\Infrastructure\Middlewares\JWTAuthMiddleware;
-use CubaDevOps\Flexi\Modules\WebHooks\Infrastructure\Controllers\WebHookController;
-use CubaDevOps\Flexi\Modules\WebHooks\Tests\TestDoubles\DummyResponseFactory;
+use Flexi\Modules\Auth\Infrastructure\Middlewares\JWTAuthMiddleware;
+use Flexi\Modules\WebHooks\Infrastructure\Controllers\WebHookController;
+use Flexi\Modules\WebHooks\Tests\TestDoubles\DummyResponseFactory;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;

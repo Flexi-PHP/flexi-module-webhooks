@@ -20,7 +20,8 @@
   "require": {
     "php": ">=7.4",
     "flexi/contracts": "^5.2.1",
-    "cubadevops/flexi-module-auth": "^1.0"
+    "cubadevops/flexi-module-auth": "^1.0",
+    "psr/http-message": "^2.0"
   },
   "autoload": {
     "psr-4": {

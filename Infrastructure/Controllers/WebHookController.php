@@ -6,7 +6,7 @@ namespace CubaDevOps\Flexi\Modules\WebHooks\Infrastructure\Controllers;
 
 use Flexi\Contracts\Classes\HttpHandler;
 use Flexi\Contracts\Interfaces\EventBusInterface;
-use Flexi\Domain\Events\Event;
+use CubaDevOps\Flexi\Modules\WebHooks\Domain\Events\WebhookEvent;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -26,7 +26,7 @@ class WebHookController extends HttpHandler
         try {
             /** @var \stdClass $payload */
             $payload = $request->getAttribute('payload');
-            $this->event_bus->dispatch(new Event($payload->event, $payload->fired_by, (array) ($payload->data ?? null)));
+            $this->event_bus->dispatch(new WebhookEvent($payload->event, $payload->fired_by, (array) ($payload->data ?? null)));
         } catch (\Exception $e) {
             return $this->createResponse(400, $e->getMessage());
         }

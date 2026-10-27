@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace CubaDevOps\Flexi\Modules\WebHooks\Tests\Infrastructure\Controllers;
 
-use Flexi\Domain\Events\Event;
+use CubaDevOps\Flexi\Modules\WebHooks\Domain\Events\WebhookEvent;
 use Flexi\Contracts\Interfaces\EventBusInterface;
 use CubaDevOps\Flexi\Modules\Auth\Infrastructure\Middlewares\JWTAuthMiddleware;
 use CubaDevOps\Flexi\Modules\WebHooks\Infrastructure\Controllers\WebHookController;
@@ -44,7 +44,7 @@ class WebHookControllerTest extends TestCase
         $this->eventBusMock
             ->expects($this->once())
             ->method('dispatch')
-            ->with($this->isInstanceOf(Event::class));
+            ->with($this->isInstanceOf(WebhookEvent::class));
 
         $response = $this->webHookController->handle($this->requestMock);
 
@@ -104,7 +104,7 @@ class WebHookControllerTest extends TestCase
         $this->eventBusMock
             ->expects($this->once())
             ->method('dispatch')
-            ->with($this->isInstanceOf(Event::class));
+            ->with($this->isInstanceOf(WebhookEvent::class));
         $response = $this->webHookController->handle($this->requestMock);
         $this->assertEquals(200, $response->getStatusCode());
     }

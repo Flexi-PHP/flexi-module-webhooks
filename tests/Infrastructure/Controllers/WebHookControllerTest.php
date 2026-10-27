@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace CubaDevOps\Flexi\Modules\WebHooks\Test\Infrastructure\Controllers;
+namespace CubaDevOps\Flexi\Modules\WebHooks\Tests\Infrastructure\Controllers;
 
-use CubaDevOps\Flexi\Domain\Events\Event;
-use CubaDevOps\Flexi\Infrastructure\Bus\EventBus;
+use Flexi\Domain\Events\Event;
+use Flexi\Contracts\Interfaces\EventBusInterface;
 use CubaDevOps\Flexi\Modules\Auth\Infrastructure\Middlewares\JWTAuthMiddleware;
 use CubaDevOps\Flexi\Modules\WebHooks\Infrastructure\Controllers\WebHookController;
-use CubaDevOps\Flexi\Test\TestData\TestDoubles\DummyResponseFactory;
+use CubaDevOps\Flexi\Modules\WebHooks\Tests\TestDoubles\DummyResponseFactory;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;
@@ -24,7 +24,7 @@ class WebHookControllerTest extends TestCase
     protected function setUp(): void
     {
         $this->responseFactory = new DummyResponseFactory();
-        $this->eventBusMock = $this->createMock(EventBus::class);
+        $this->eventBusMock = $this->createMock(EventBusInterface::class);
         $this->requestMock = $this->createMock(ServerRequestInterface::class);
         $this->streamMock = $this->createMock(StreamInterface::class);
 

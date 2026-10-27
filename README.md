@@ -4,7 +4,7 @@ The WebHooks module exposes a `POST /trigger-event` route. It reads the JSON pay
 
 The route uses `jwt_auth_middleware`, so this module requires the Auth module and a valid JWT configuration. Route configuration is in `Config/routes.json`.
 
-Install `cubadevops/flexi-module-webhooks` and activate `WebHooks` with its dependencies. It supports PHP 7.4+, Flexi Core `^3.2`, and `flexi/contracts` `^5.2.1`. Validate payload shape and authorization policy in the application before exposing this endpoint publicly.
+Install `flexi/flexi-module-webhooks` and activate `WebHooks` with its dependencies. It supports PHP 7.4+, Flexi Core `^3.2`, and `flexi/contracts` `^5.2.1`. Validate payload shape and authorization policy in the application before exposing this endpoint publicly.
 
 ## Tests
 

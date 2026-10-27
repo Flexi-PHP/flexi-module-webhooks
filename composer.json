@@ -1,5 +1,5 @@
 {
-  "name": "cubadevops/flexi-module-webhooks",
+  "name": "flexi/flexi-module-webhooks",
   "description": "WebHooks module for Flexi Framework",
   "version": "2.0.0",
   "type": "flexi-module",
@@ -20,7 +20,7 @@
   "require": {
     "php": ">=7.4",
     "flexi/contracts": "^5.2.1",
-    "cubadevops/flexi-module-auth": "^2.0",
+    "flexi/flexi-module-auth": "^2.0",
     "psr/http-message": "^2.0",
     "psr/http-factory": "^1.0"
   },
